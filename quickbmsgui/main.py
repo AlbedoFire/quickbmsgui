@@ -65,12 +65,12 @@ def run_long_process(command):
         text_area.insert(tk.END, f"错误: {str(e)}\n")
 
 def view_list():
-    path = importlib.resources.files("bmsgui.tools").joinpath("quickbms_4gb_files.exe")
+    path = importlib.resources.files("quickbmsgui.tools").joinpath("quickbms_4gb_files.exe")
     cmd = [path, "-l",bms_script_path.get(),file_path.get()
            ,out_path.get()]
     threading.Thread(target=run_long_process,args=(cmd,), daemon=True).start()
 def unpack_d():
-    path = importlib.resources.files("bmsgui.tools").joinpath("quickbms_4gb_files.exe")
+    path = importlib.resources.files("quickbmsgui.tools").joinpath("quickbms_4gb_files.exe")
     cmd = [path, bms_script_path.get(), file_path.get()
         , out_path.get()]
     threading.Thread(target=run_long_process, args=(cmd,), daemon=True).start()
